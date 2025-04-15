@@ -1,2 +1,5 @@
 /venv
 /clean_data.csv
+/data
+/metrics
+/models
