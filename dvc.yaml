@@ -1,0 +1,21 @@
+stages:
+  prepare:
+    cmd: python src/data/split_data.py data/raw_data/raw.csv data/processed_data &&
+      python src/processed_data/norm_data.py
+    deps:
+    - data/raw_data/raw.csv
+    - src/data/norm_data.py
+    - src/data/split_data.py
+    params:
+    - prepare.random_state
+    - prepare.test_size
+    outs:
+    - data/processed_data
+  search:
+    cmd: python src/models/gridsearch.py
+    deps:
+    - data/processed_data/X_train_scaled.csv
+    - data/processed_data/y_train.csv
+    - src/models/gridsearch.py
+    outs:
+    - models/best_params.pkl
