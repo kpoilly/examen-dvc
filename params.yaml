@@ -1,0 +1,13 @@
+prepare:
+  data_url: "https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv"
+  data_file: "data/winequality-red.csv"
+  test_size: 0.2
+  random_state: 42
+
+train:
+  alpha: 0.5
+  l1_ratio: 0.5
+
+evaluate:
+  model_file: "model.joblib"
+  test_file: "data/test.csv"
