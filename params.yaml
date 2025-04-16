@@ -1,6 +1,6 @@
 prepare:
-  data_url: "https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv"
-  data_file: "data/winequality-red.csv"
+  data_url: "https://datascientest-mlops.s3.eu-west-1.amazonaws.com/mlops_dvc_fr/raw.csv"
+  data_file: "raw.csv"
   test_size: 0.2
   random_state: 42
 
